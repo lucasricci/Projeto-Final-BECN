@@ -15,9 +15,19 @@ names = [
     {"Nome": "Tereza", "Grau": "4"},
 ]
 
-for c in range(len(names)):
+new_names = [    
+    {"Nome": "Ciariane", "Grau": ""},
+    {"Nome": "Eduarda", "Grau": ""},
+    {"Nome": "Fatima", "Grau": ""},
+    {"Nome": "Jennifer Lopez", "Grau": ""},
+    {"Nome": "Sandra", "Grau": ""},
+    {"Nome": "Seariane", "Grau": ""},
+    {"Nome": "Sueli", "Grau": ""}
+]
+
+for c in range(len(new_names)):
     file = open("results.csv", "a")
-    im = Image.open(f"C:\\Users\\lucas\\Desktop\\BECN\\{names[c]["Nome"]}.jpg")
+    im = Image.open(f"C:\\Users\\lucas\\Desktop\\Projeto-Final-BECN\\Banana\\{new_names[c]["Nome"]}.jpg")
 
     px = im.load()
     pixel_matrix = []
@@ -32,6 +42,6 @@ for c in range(len(names)):
     b = np.mean(np.array(pixel_matrix)[:, 2])
 
     #print('#%02x%02x%02x' % (int(r), int(g), int(b)))
-    output = f"{names[c]["Nome"]}, {r:.0f}, {g:.0f}, {b:.0f}\n"
+    output = f"{new_names[c]["Nome"]}, {r:.0f}, {g:.0f}, {b:.0f}\n"
     file.write(output)
     file.close()
